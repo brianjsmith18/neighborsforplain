@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Bio | Plain Township</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Core Variables matching the Homepage */
+        :root {
+            --dark-slate: #0A1128;
+            --action-red: #E5383B;
+            --off-white: #F4F5F7;
+            --pure-white: #FFFFFF;
+            --text-main: #1D2330;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            color: var(--text-main);
+            background-color: var(--off-white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            color: var(--dark-slate);
+        }
+
+        /* Compact Navigation */
+        nav {
+            background-color: var(--pure-white);
+            border-bottom: 4px solid var(--dark-slate);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-slate);
+            text-decoration: none;
+        }
+        .back-btn {
+            color: var(--dark-slate);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            border: 2px solid var(--dark-slate);
+            padding: 0.5rem 1rem;
+            transition: all 0.2s;
+        }
+        .back-btn:hover {
+            background-color: var(--dark-slate);
+            color: var(--pure-white);
+        }
+
+        /* Bio Header */
+        .bio-header {
+            background-color: var(--dark-slate);
+            color: var(--pure-white);
+            padding: 4rem 5%;
+            text-align: center;
+            border-bottom: 8px solid var(--action-red);
+        }
+        .bio-header h1 {
+            color: var(--pure-white);
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        .bio-header p {
+            color: #A3AAB8;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Main Bio Content */
+        .bio-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+        
+        /* Profile Image */
+        .bio-img-wrapper {
+            background-color: var(--pure-white);
+            border: 4px solid var(--dark-slate);
+            box-shadow: 8px 8px 0px var(--dark-slate);
+            height: fit-content;
+        }
+        .bio-img-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Bio Text Formatting */
+        .bio-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 4px solid var(--dark-slate);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .bio-text p {
+            font-size: 1.15rem;
+            margin-bottom: 1.5rem;
+        }
+        .bio-text ul {
+            margin-left: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.15rem;
+        }
+        .bio-text li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050814;
+            color: #fff;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 4px solid var(--action-red);
+            margin-top: 4rem;
+        }
+        footer p {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .bio-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="nav-logo">PLAIN TOWNSHIP</a>
+        <a href="index.html" class="back-btn">&larr; Back to Home</a>
+    </nav>
+
+    <header class="bio-header">
+        <h1>REBECCA "BECCA" NOFTZ</h1>
+        <p>Candidate for Plain Township Board</p>
+    </header>
+
+    <div class="bio-container">
+        
+        <div class="bio-img-wrapper">
+            <img src="placeholder.jpg" alt="Candidate Photo">
+        </div>
+
+        <div class="bio-text">
+            <h2>Meet Rebecca</h2>
+            
+            <p>Rebecca “Becca” Noftz has called the Warsaw area home for more than two decades, building her career and raising her family in the community. With a background in bioengineering and 24 years in Warsaw’s medical device industry, Becca has worked in engineering, project leadership, and regulatory affairs—experience that has shaped how she listens, solves problems, and approaches decisions with care and accountability.</p>
+            
+            <p>Becca and her husband, Jake, are raising their three children near Oswego, where family, lake days, local theater, travel, and helping others are part of everyday life. She cares deeply about supporting local families, keeping kids fed, and strengthening the community that has helped shape her own family’s life.</p>
+
+            <p>She is running for the Plain Township Board to use her background in thoughtful planning, problem-solving, and accountability to serve her neighbors. Becca believes local government should be practical, transparent, and focused on making sure township resources truly support the people who need them.</p>
+
+            <h2 style="margin-top: 2rem; font-size: 2rem;">Key Priorities</h2>
+            <ul>
+                <li><strong>Transparency:</strong> Ensuring all township expenditures and decisions are clearly communicated to the public.</li>
+                <li><strong>Stewardship:</strong> Treating every tax dollar with respect and ensuring it goes toward necessary community services.</li>
+                <li><strong>Accessibility:</strong> Making sure residents know what township assistance is available and how to access it when faced with emergencies.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>PAID FOR BY THE COMMITTEE TO ELECT NOFTZ, OSBUN, & SMITH</p>
+    </footer>
+
+</body>
+</html>
