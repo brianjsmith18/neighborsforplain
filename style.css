@@ -149,7 +149,7 @@ h1, h2, h3, h4 {
 }
 
 /* ============================================================
-   4. CANDIDATE BIO BOXES
+   4. CANDIDATE BIO BOXES (REVISED)
    ============================================================ */
 .candidates-section {
     background-color: #F4F5F7;
@@ -181,6 +181,8 @@ h1, h2, h3, h4 {
 .candidate-card {
     background-color: #FFFFFF;
     border: 3px solid #0A1128;
+    display: flex;
+    flex-direction: column; /* Ensures content stacks top-to-bottom */
 }
 
 .candidate-card img {
@@ -192,12 +194,40 @@ h1, h2, h3, h4 {
 .candidate-info {
     padding: 1.5rem;
     text-align: center;
+    flex-grow: 1; /* Helps cards grow evenly */
 }
 
 .candidate-info h3 {
     font-size: 2rem;
     color: #0A1128;
     margin-bottom: 0.5rem;
+}
+
+/* NEW: Bio Text Styling */
+.bio-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4B5563; 
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+/* NEW: Read More Link Styling */
+.read-more {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: #E5383B;
+    border-bottom: 2px solid #E5383B;
+    margin-top: 1rem;
+    transition: all 0.2s ease;
+}
+
+.read-more:hover {
+    color: #0A1128;
+    border-bottom-color: #0A1128;
 }
 
 /* ============================================================
