@@ -1,354 +1,132 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noftz, Osbun, and Smith for Plain Township</title>
-    
+    <title>Noftz, Osbun, & Smith for Plain Twp</title>
+    <!-- Google Fonts Integration -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- Color Palette & CSS Variables --- */
-        :root {
-            --dark-slate: #0A1128;   /* Deep, almost black navy */
-            --action-red: #E5383B;   /* Vibrant, modern campaign red */
-            --off-white: #F4F5F7;    /* Slightly muted background */
-            --pure-white: #FFFFFF;
-            --text-main: #1D2330;
-        }
-
-        /* --- Global Reset & Base Setup --- */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Public Sans', sans-serif;
-            color: var(--text-main);
-            background-color: var(--off-white);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        
-        /* Headers use the heavy, impactful Oswald font */
-        h1, h2, h3, h4 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            color: var(--dark-slate);
-        }
-
-        /* --- Navigation (Sticky, thick borders) --- */
-        nav {
-            background-color: var(--pure-white);
-            border-bottom: 4px solid var(--dark-slate);
-            padding: 1rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .nav-logo {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--dark-slate);
-            text-decoration: none;
-            line-height: 1;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: var(--dark-slate);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            text-transform: uppercase;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: var(--action-red);
-        }
-        .nav-btn {
-            background-color: var(--action-red);
-            color: var(--pure-white) !important;
-            padding: 0.75rem 2rem;
-            border: 2px solid var(--dark-slate);
-            box-shadow: 4px 4px 0px var(--dark-slate);
-            transition: all 0.2s ease;
-        }
-        .nav-btn:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 2px 2px 0px var(--dark-slate);
-        }
-
-        /* --- Hero Section (Massive typography, dark mode) --- */
-        .hero {
-            background-color: var(--dark-slate);
-            color: var(--pure-white);
-            padding: 8rem 5%;
-            text-align: left;
-            border-bottom: 8px solid var(--action-red);
-        }
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            color: var(--pure-white);
-            font-size: clamp(3rem, 8vw, 6rem); /* Responsive giant text */
-            line-height: 1.05;
-            margin-bottom: 1.5rem;
-            max-width: 1000px;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            font-weight: 400;
-            max-width: 700px;
-            margin-bottom: 3rem;
-            color: #A3AAB8;
-        }
-        .hero-btn {
-            display: inline-block;
-            background-color: var(--pure-white);
-            color: var(--dark-slate);
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            text-decoration: none;
-            padding: 1rem 3rem;
-            border: 3px solid var(--pure-white);
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-        .hero-btn:hover {
-            background-color: transparent;
-            color: var(--pure-white);
-        }
-
-        /* --- Layout Wrappers --- */
-        .section-wrapper {
-            padding: 6rem 5%;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-size: 3.5rem;
-            margin-bottom: 3rem;
-            border-bottom: 4px solid var(--dark-slate);
-            display: inline-block;
-            padding-bottom: 0.5rem;
-        }
-
-        /* --- Candidate Cards (Flat, Thick Borders, High Contrast) --- */
-        .candidate-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        .candidate-card {
-            background-color: var(--pure-white);
-            border: 3px solid var(--dark-slate);
-            box-shadow: 8px 8px 0px var(--dark-slate);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s;
-        }
-        .candidate-card:hover {
-            transform: translateY(-5px);
-        }
-        .card-img-placeholder {
-            background-color: #E2E4E9;
-            height: 350px;
-            border-bottom: 3px solid var(--dark-slate);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Oswald', sans-serif;
-            color: #888;
-            font-size: 1.2rem;
-            /* Replace this div with an actual <img> tag when ready */
-        }
-        .card-content {
-            padding: 2.5rem;
-        }
-        .card-content h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.1;
-        }
-        .card-content p {
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        /* --- Duties Section (Grid Layout) --- */
-        .duties-section {
-            background-color: var(--dark-slate);
-            color: var(--pure-white);
-        }
-        .duties-section .section-title {
-            color: var(--pure-white);
-            border-bottom-color: var(--action-red);
-        }
-        .duties-intro {
-            font-size: 1.25rem;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            color: #A3AAB8;
-        }
-        .duties-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .duty-item {
-            border-top: 4px solid var(--action-red);
-            padding-top: 1.5rem;
-        }
-        .duty-item h4 {
-            color: var(--pure-white);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .duty-item p {
-            color: #D1D5DB;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #050814;
-            color: #fff;
-            text-align: center;
-            padding: 4rem 2rem;
-            border-top: 4px solid var(--action-red);
-        }
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.7;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* --- Responsive Tweaks --- */
-        @media (max-width: 768px) {
-            .nav-links { display: none; } /* On mobile, this would be a hamburger menu */
-            .section-title { font-size: 2.5rem; }
-            .hero { padding: 5rem 5%; }
-            .candidate-card { box-shadow: 4px 4px 0px var(--dark-slate); }
-        }
-    </style>
+    <!-- Link to your integrated CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="nav-logo">NOFTZ, OSBUN, & SMITH for PLAIN TWP</a>
-        <div class="nav-links">
-            <a href="#about">The Mission</a>
-            <a href="#candidates">Meet the Team</a>
-            <a href="#duties">Board Duties</a>
-            <a href="https://secure.actblue.com/donate/noftz--osbun-and-smith-for-plain-township-board-1" target="_blank" class="nav-btn">DONATE</a>
+    <!-- ============================================================ -->
+    <!-- 1. MAIN NAVIGATION HEADER -->
+    <!-- ============================================================ -->
+    <header class="main-header">
+        <div class="header-logo">
+            <h1>NOFTZ, OSBUN, & SMITH for PLAIN TWP</h1>
         </div>
-    </nav>
-
-    <header class="hero">
-        <div class="hero-container">
-            <h1>TRANSPARENCY.<br>OUTREACH.<br>EDUCATION.</h1>
-            <p>Rebecca Noftz, Robert Osbun, & Brian Smith are running for the Plain Township Board to bring practical, solutions-focused leadership back to our community. Local government should work for the people who live here.</p>
-            <a href="#candidates" class="hero-btn">Meet the Candidates</a>
-        </div>
+        <nav class="header-nav">
+            <ul>
+                <li><a href="#mission">THE MISSION</a></li>
+                <li><a href="#team">MEET THE TEAM</a></li>
+                <li><a href="#duties">BOARD DUTIES</a></li>
+                <li class="donate-btn-item"><a href="https://actblue.com/yourlink" class="donate-btn-link">DONATE</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="about" class="section-wrapper">
-        <h2 class="section-title">A Service-First Approach</h2>
-        <p style="font-size: 1.5rem; max-width: 900px; font-weight: 600; line-height: 1.5;">
-            We are stepping forward as committed members of Plain Township who believe our community deserves a local government that is accessible, understandable, and responsive. 
-            <br><br>
-            By improving communication, strengthening awareness of township services, and ensuring the responsible stewardship of your tax dollars, we will build a township that supports its residents efficiently and effectively.
-        </p>
-    </section>
-
-    <section id="candidates" class="section-wrapper" style="background-color: var(--pure-white); border-top: 4px solid var(--dark-slate); border-bottom: 4px solid var(--dark-slate);">
-        <h2 class="section-title">The Candidates</h2>
-        
-        <div class="candidate-grid">
-            
-            <div class="candidate-card">
-                <a href="rebecca.html">
-                    <img src="rebecca.jpg" alt="Rebecca Noftz" style="width: 100%; height: 350px; object-fit: cover; border-bottom: 3px solid var(--dark-slate); transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-                </a>
-                <div class="card-content">
-                    <h3>REBECCA NOFTZ</h3>
-                    <p>Rebecca “Becca” Noftz has called the Warsaw area home for more than two decades, building her career and raising her family in the community. With a background in bioengineering and 24 years in Warsaw’s medical device industry, Becca has worked in engineering, project leadership, and regulatory affairs—experience that has shaped how she listens, solves problems, and approaches decisions with care and accountability.</p>
-                    <a href="rebecca.html" style="color: var(--action-red); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; margin-top: 15px; display: inline-block;">Read More &rarr;</a>
-                </div>
-            </div>
-
-            <div class="candidate-card">
-                <a href="robert.html">
-                    <img src="robert.jpg" alt="Robert Osbun" style="width: 100%; height: 350px; object-fit: cover; border-bottom: 3px solid var(--dark-slate); transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-                </a>
-                <div class="card-content">
-                    <h3>ROBERT OSBUN</h3>
-                    <p>Robert is a retired former financial services manager. Robert served as Vice President & Branch Manager for Charles Schwab & Co in Campbell, California, Tucson, Arizona, and Honolulu, Hawaii. </p>
-                    <p>He lives in Leesburg, where his family has had a home for over 80 years. Robert has been the treasurer for the Kosciusko County Democratic Party since 2024. He attended Warsaw High School, and earned a B.A. degree from Hanover College and Masters degree from The University of Denver. </p>
-                    <a href="robert.html" style="color: var(--action-red); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; margin-top: 15px; display: inline-block;">Read More &rarr;</a>
-                </div>
-            </div>
-
-            <div class="candidate-card">
-                <a href="brian.html">
-                    <img src="brian.jpg" alt="Brian Smith" style="width: 100%; height: 350px; object-fit: cover; border-bottom: 3px solid var(--dark-slate); transition: opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
-                </a>
-                <div class="card-content">
-                    <h3>BRIAN SMITH</h3>
-                    <p>Brian is a third-generation resident of Plain Township, and his family’s roots here run incredibly deep. In fact, public service is in his DNA.</p>
-                    <p>Years ago, his grandfather, Jewell Rogers, served this very township in one of the most literal, hardworking ways possible: by digging graves by hand to ensure our neighbors were laid to rest with dignity. That grit, dedication, and old-school work ethic are exactly what Brian intends to bring to township government.</p>
-                    <a href="brian.html" style="color: var(--action-red); font-weight: 700; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; margin-top: 15px; display: inline-block;">Read More &rarr;</a>
-                </div>
-            </div>
-
+    <!-- ============================================================ -->
+    <!-- 2. CAMPAIGN HERO SECTION -->
+    <!-- ============================================================ -->
+    <section class="campaign-hero" id="mission">
+        <div class="hero-content-wrapper">
+            <h1 class="hero-headline">TRANSPARENCY.<br>OUTREACH.<br>EDUCATION.</h1>
+            <p class="hero-paragraph">
+                Rebecca Noftz, Robert Osbun, & Brian Smith are running for the Plain Township Board to bring practical, solutions-focused leadership back to our community. Local government should work for the people who live here.
+            </p>
+            <a href="#team" class="hero-btn">MEET THE CANDIDATES</a>
         </div>
-    
     </section>
 
-    <section id="duties" class="duties-section">
-        <div class="section-wrapper">
-            <h2 class="section-title">Duties of the Board</h2>
-            <p class="duties-intro">In Indiana, the Township Advisory Board works alongside the Township Trustee to ensure local government runs smoothly. While the Trustee handles day-to-day administration, the Advisory Board acts as the legislative and financial oversight body.</p>
+    <!-- ============================================================ -->
+    <!-- 3. CANDIDATE BIO BOXES -->
+    <!-- ============================================================ -->
+    <section class="candidates-section" id="team">
+        <div class="candidates-header">
+            <h2>THE CANDIDATES</h2>
+            <div class="candidates-main-line"></div>
+        </div>
+        
+        <div class="candidates-grid">
+            <!-- Candidate 1 -->
+            <div class="candidate-card">
+                <img src="rebecca_noftz.jpg" alt="Rebecca Noftz">
+                <div class="candidate-info">
+                    <h3>REBECCA NOFTZ</h3>
+                </div>
+            </div>
+
+            <!-- Candidate 2 -->
+            <div class="candidate-card">
+                <img src="robert_osbun.jpg" alt="Robert Osbun">
+                <div class="candidate-info">
+                    <h3>ROBERT OSBUN</h3>
+                </div>
+            </div>
+
+            <!-- Candidate 3 -->
+            <div class="candidate-card">
+                <img src="brian_smith.jpg" alt="Brian Smith">
+                <div class="candidate-info">
+                    <h3>BRIAN SMITH</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- 4. DUTIES OF THE BOARD SECTION -->
+    <!-- ============================================================ -->
+    <section class="board-duties-section" id="duties">
+        <div class="board-duties-container">
             
+            <div class="duties-header">
+                <h2>DUTIES OF THE BOARD</h2>
+                <div class="duties-main-line"></div>
+            </div>
+
+            <p class="duties-intro">
+                In Indiana, the Township Advisory Board works alongside the Township Trustee to ensure local government runs smoothly. While the Trustee handles day-to-day administration, the Advisory Board acts as the legislative and financial oversight body.
+            </p>
+
             <div class="duties-grid">
+                <!-- Duty 1 -->
                 <div class="duty-item">
-                    <h4>ADOPTING THE BUDGET</h4>
+                    <div class="duty-item-line"></div>
+                    <h3>ADOPTING THE BUDGET</h3>
                     <p>The board reviews and approves the annual township budget, ensuring tax dollars are allocated efficiently.</p>
                 </div>
+
+                <!-- Duty 2 -->
                 <div class="duty-item">
-                    <h4>FIXING THE TAX RATE</h4>
+                    <div class="duty-item-line"></div>
+                    <h3>FIXING THE TAX RATE</h3>
                     <p>The board is responsible for thoughtfully evaluating and setting the township tax rate annually.</p>
                 </div>
+
+                <!-- Duty 3 -->
                 <div class="duty-item">
-                    <h4>APPROVING CONTRACTS</h4>
+                    <div class="duty-item-line"></div>
+                    <h3>APPROVING CONTRACTS</h3>
                     <p>The board must approve any township contracts, providing a necessary check and balance to operations.</p>
                 </div>
+                
+                <!-- Duty 4 -->
                 <div class="duty-item">
-                    <h4>ADVISING THE TRUSTEE</h4>
-                    <p>The board acts as an advisory council for the Trustee concerning emergency assistance and resource management.</p>
+                    <div class="duty-item-line"></div>
+                    <h3>ADVISING THE TRUSTEE</h3>
+                    <!-- Added generic concluding text to complete the partial sentence in the image -->
+                    <p>The board acts as an advisory council for the Township Trustee, offering guidance and community representation.</p>
                 </div>
             </div>
+            
         </div>
     </section>
-
-    <footer>
-        <p>PAID FOR BY THE COMMITTEE TO ELECT NOFTZ, OSBUN, & SMITH</p>
-        <p style="margin-top: 10px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026. All rights reserved.</p>
-    </footer>
 
 </body>
 </html>
