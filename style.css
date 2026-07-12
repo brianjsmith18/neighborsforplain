@@ -1,0 +1,211 @@
+/* =========================================
+   1. GLOBAL RESET AND TYPOGRAPHY (from image_0.png and image_1.png)
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    /* Main body font is Public Sans, default color #1D2330 */
+    font-family: 'Public Sans', sans-serif;
+    color: #1D2330;
+    background-color: #F4F5F7; /* Light Gray from image_1.png */
+}
+
+/* Headings use Oswald and are uppercase */
+h1, h2, h3, h4 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* =========================================
+   2. MAIN HEADER STYLES (Solid White Bar)
+   ========================================= */
+.main-header {
+    background-color: #FFFFFF;
+    padding: 1rem 5%; /* Full width padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #EEEEEE; /* Subtle divider */
+    position: relative;
+    z-index: 100;
+}
+
+.header-logo h1 {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    color: #0A1128; /* Dark Slate Blue from image_1.png */
+}
+
+.header-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.header-nav ul li a {
+    font-size: 0.95rem;
+    color: #1D2330;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.header-nav ul li a:hover {
+    color: #0A1128;
+}
+
+/* Specific styling for the Red Donate Button */
+.donate-btn-item {
+    margin-left: 1rem;
+}
+
+.donate-btn-link {
+    background-color: #E5383B; /* Specific Red from image_1.png */
+    color: #FFFFFF !important;
+    padding: 0.8rem 2.2rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid #0A1128; /* The heavy border from image_2.png */
+    box-shadow: 4px 4px 0px #0A1128; /* The specific box shadow style from image_2.png */
+    transition: all 0.2s ease;
+}
+
+.donate-btn-link:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #0A1128;
+}
+
+/* =========================================
+   3. HERO CONTENT AND CUSTOM BLENDING (The Core Task)
+   ========================================= */
+.hero-content {
+    /* 1. We must set position to relative for overlays to work */
+    position: relative;
+    width: 100%;
+    
+    /* We match the original layout from image_2.png, which had dark background */
+    background-color: #0A1128; /* Ensures no white gap if the photo fails */
+    
+    /* 2. THE ADVANCED GRADIENT BLENDING OVERLAY:
+       This is where we stack two linear gradients (top and radial) directly over the 'brick_streets.jpg' image.
+       The heavy slate gradient is at the top/sides, creating the deep fade, while a soft focus spotlight hits the center and bottom.
+    */
+    background-image: 
+        /* Gradient 1 (Top-Down): Heavy fade from slate blue to semi-transparent */
+        linear-gradient(to bottom, rgba(10, 17, 40, 0.95) 0%, rgba(10, 17, 40, 0.4) 60%, rgba(10, 17, 40, 0) 100%),
+        /* Gradient 2 (Radial Spotlight): Soft focus in the center/bottom, fading to heavy slate overlay */
+        radial-gradient(circle at center 80%, rgba(255, 255, 255, 0.05), rgba(10, 17, 40, 0.9) 70%),
+        /* 3. The actual campaign photo of the team on brick streets */
+        url('brick_streets.jpg'); /* !!! MAKE SURE YOU HAVE THIS FILE NAME VERBATIM IN THE SAME FOLDER !!! */
+    
+    /* 4. Controls how the photo stretches */
+    background-position: center bottom; /* Anchor the photo at the bottom */
+    background-size: cover; /* Forces image to cover the container width/height */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* (Optional) Gives a parallax scrolling effect */
+
+    /* Set overall height, just like the original background from image_2.png */
+    min-height: 80vh; /* Takes up 80% of the viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 5%;
+}
+
+.hero-inner {
+    max-width: 1200px; /* Optional: Constrain maximum width for readability on large screens */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-aligns all elements */
+    text-align: center;
+    z-index: 10; /* Ensures content sits *above* the background blending layer */
+}
+
+/* All main body text is made white for perfect legibility against the photo */
+.hero-keywords h1 {
+    color: #FFFFFF;
+    font-size: 4rem; /* Match the massive size from image_2.png */
+    font-weight: 700;
+    line-height: 1.05;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+}
+
+.hero-description {
+    max-width: 800px;
+}
+
+.hero-description p {
+    color: #FFFFFF;
+    font-size: 1.35rem; /* Larger than normal body text */
+    line-height: 1.8;
+    margin-bottom: 3rem;
+}
+
+/* Specific styling for the white call-to-action button */
+.btn-meet-candidates {
+    background-color: #FFFFFF;
+    color: #0A1128 !important; /* Dark text on white button */
+    padding: 1.2rem 3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border: 2px solid #FFFFFF; /* Match original design style but white */
+    box-shadow: none; /* No shadow on this button to match image_2.png */
+    transition: all 0.2s ease;
+}
+
+.btn-meet-candidates:hover {
+    background-color: #0A1128;
+    color: #FFFFFF !important;
+}
+
+/* =========================================
+   4. RESPONSIVE MEDIA QUERIES (Important for mobile)
+   ========================================= */
+@media screen and (max-width: 900px) {
+    .hero-keywords h1 {
+        font-size: 3rem; /* Scale down text for tablet */
+    }
+    
+    .hero-description p {
+        font-size: 1.15rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main-header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .header-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .donate-btn-item {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .hero-keywords h1 {
+        font-size: 2.2rem; /* Scale down for mobile */
+    }
+    
+    .hero-content {
+        background-attachment: scroll; /* Parallax fixed background doesn't work well on mobile */
+    }
+}
