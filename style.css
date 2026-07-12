@@ -1,39 +1,36 @@
-/* =========================================
-   1. GLOBAL RESET AND TYPOGRAPHY (from image_0.png and image_1.png)
-   ========================================= */
+/* ============================================================
+   1. GLOBAL RESET AND TYPOGRAPHY
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
-    box-shadow: none;
-    border-radius: 0;
+    box-sizing: border-box; 
     text-decoration: none;
     list-style: none;
 }
 
 body {
-    /* Main body font is Public Sans, default color #1D2330 */
-    font-family: 'Public Sans', sans-serif;
+    font-family: 'Public Sans', -apple-system, sans-serif;
     color: #1D2330;
-    background-color: #F4F5F7; /* Light Gray from image_1.png */
+    background-color: #F4F5F7; 
 }
 
-/* Headings use Oswald and are uppercase */
 h1, h2, h3, h4 {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', Impact, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
 }
 
-/* =========================================
-   2. MAIN HEADER STYLES (Solid White Bar)
-   ========================================= */
+/* ============================================================
+   2. MAIN NAVIGATION HEADER
+   ============================================================ */
 .main-header {
     background-color: #FFFFFF;
-    padding: 1rem 5%; /* Full width padding */
+    padding: 1rem 5%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #EEEEEE; /* Subtle divider */
+    border-bottom: 2px solid #EEEEEE; 
     position: relative;
     z-index: 100;
 }
@@ -41,7 +38,7 @@ h1, h2, h3, h4 {
 .header-logo h1 {
     font-size: 1.5rem;
     letter-spacing: -0.5px;
-    color: #0A1128; /* Dark Slate Blue from image_1.png */
+    color: #0A1128; 
 }
 
 .header-nav ul {
@@ -61,20 +58,20 @@ h1, h2, h3, h4 {
     color: #0A1128;
 }
 
-/* Specific styling for the Red Donate Button */
+/* Red Donate Button in Header */
 .donate-btn-item {
     margin-left: 1rem;
 }
 
 .donate-btn-link {
-    background-color: #E5383B; /* Specific Red from image_1.png */
+    background-color: #E5383B; 
     color: #FFFFFF !important;
     padding: 0.8rem 2.2rem;
     font-family: 'Oswald', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-    border: 2px solid #0A1128; /* The heavy border from image_2.png */
-    box-shadow: 4px 4px 0px #0A1128; /* The specific box shadow style from image_2.png */
+    border: 2px solid #0A1128; 
+    box-shadow: 4px 4px 0px #0A1128; 
     transition: all 0.2s ease;
 }
 
@@ -83,103 +80,191 @@ h1, h2, h3, h4 {
     box-shadow: 2px 2px 0px #0A1128;
 }
 
-/* =========================================
-   3. HERO CONTENT AND CUSTOM BLENDING (The Core Task)
-   ========================================= */
-.hero-content {
-    /* 1. We must set position to relative for overlays to work */
+/* ============================================================
+   3. CAMPAIGN HERO SECTION (The Brick Streets Background)
+   ============================================================ */
+.campaign-hero {
     position: relative;
     width: 100%;
-    
-    /* We match the original layout from image_2.png, which had dark background */
-    background-color: #0A1128; /* Ensures no white gap if the photo fails */
-    
-    /* 2. THE ADVANCED GRADIENT BLENDING OVERLAY:
-       This is where we stack two linear gradients (top and radial) directly over the 'brick_streets.jpg' image.
-       The heavy slate gradient is at the top/sides, creating the deep fade, while a soft focus spotlight hits the center and bottom.
-    */
-    background-image: 
-        /* Gradient 1 (Top-Down): Heavy fade from slate blue to semi-transparent */
-        linear-gradient(to bottom, rgba(10, 17, 40, 0.95) 0%, rgba(10, 17, 40, 0.4) 60%, rgba(10, 17, 40, 0) 100%),
-        /* Gradient 2 (Radial Spotlight): Soft focus in the center/bottom, fading to heavy slate overlay */
-        radial-gradient(circle at center 80%, rgba(255, 255, 255, 0.05), rgba(10, 17, 40, 0.9) 70%),
-        /* 3. The actual campaign photo of the team on brick streets */
-        url('brick_streets.jpg'); /* !!! MAKE SURE YOU HAVE THIS FILE NAME VERBATIM IN THE SAME FOLDER !!! */
-    
-    /* 4. Controls how the photo stretches */
-    background-position: center bottom; /* Anchor the photo at the bottom */
-    background-size: cover; /* Forces image to cover the container width/height */
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* (Optional) Gives a parallax scrolling effect */
-
-    /* Set overall height, just like the original background from image_2.png */
-    min-height: 80vh; /* Takes up 80% of the viewport height */
+    min-height: 80vh; 
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: center; 
     padding: 4rem 5%;
+    background-color: #0A1128; 
+    background-image: 
+        linear-gradient(to bottom, rgba(10, 17, 40, 0.95) 0%, rgba(10, 17, 40, 0.4) 60%, rgba(10, 17, 40, 0) 100%),
+        radial-gradient(circle at center 80%, rgba(255, 255, 255, 0.05), rgba(10, 17, 40, 0.9) 70%),
+        url('brick_streets.jpg'); 
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.hero-inner {
-    max-width: 1200px; /* Optional: Constrain maximum width for readability on large screens */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center-aligns all elements */
-    text-align: center;
-    z-index: 10; /* Ensures content sits *above* the background blending layer */
+.hero-content-wrapper {
+    max-width: 800px; 
+    position: relative;
+    z-index: 10; 
 }
 
-/* All main body text is made white for perfect legibility against the photo */
-.hero-keywords h1 {
+.hero-headline {
     color: #FFFFFF;
-    font-size: 4rem; /* Match the massive size from image_2.png */
-    font-weight: 700;
+    font-size: 4rem;
     line-height: 1.05;
-    margin-bottom: 2rem;
-    letter-spacing: -2px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
 }
 
-.hero-description {
-    max-width: 800px;
-}
-
-.hero-description p {
+.hero-paragraph {
     color: #FFFFFF;
-    font-size: 1.35rem; /* Larger than normal body text */
-    line-height: 1.8;
-    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
 }
 
-/* Specific styling for the white call-to-action button */
-.btn-meet-candidates {
+.hero-btn {
+    display: inline-block;
     background-color: #FFFFFF;
-    color: #0A1128 !important; /* Dark text on white button */
-    padding: 1.2rem 3rem;
-    font-family: 'Oswald', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    border: 2px solid #FFFFFF; /* Match original design style but white */
-    box-shadow: none; /* No shadow on this button to match image_2.png */
+    color: #0A1128;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border: 2px solid #FFFFFF;
     transition: all 0.2s ease;
 }
 
-.btn-meet-candidates:hover {
+.hero-btn:hover {
     background-color: #0A1128;
-    color: #FFFFFF !important;
+    color: #FFFFFF;
 }
 
-/* =========================================
-   4. RESPONSIVE MEDIA QUERIES (Important for mobile)
-   ========================================= */
+/* ============================================================
+   4. CANDIDATE BIO BOXES
+   ============================================================ */
+.candidates-section {
+    background-color: #F4F5F7;
+    padding: 5rem 5%;
+}
+
+.candidates-header h2 {
+    font-size: 3rem;
+    color: #0A1128;
+    margin-bottom: 0.5rem;
+}
+
+.candidates-main-line {
+    width: 300px;
+    height: 4px;
+    background-color: #0A1128;
+    border: none;
+    margin-bottom: 3rem;
+}
+
+.candidates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.candidate-card {
+    background-color: #FFFFFF;
+    border: 3px solid #0A1128;
+}
+
+.candidate-card img {
+    width: 100%;
+    display: block;
+    border-bottom: 3px solid #0A1128;
+}
+
+.candidate-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.candidate-info h3 {
+    font-size: 2rem;
+    color: #0A1128;
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   5. DUTIES OF THE BOARD SECTION
+   ============================================================ */
+.board-duties-section {
+    background-color: #0A1128; /* The dark slate background */
+    padding: 5rem 5%;
+}
+
+.board-duties-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.duties-header h2 {
+    font-size: 3.5rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+}
+
+/* The primary red line beneath the main title */
+.duties-main-line {
+    width: 45%;
+    max-width: 450px;
+    height: 4px;
+    background-color: #E5383B;
+    border: none;
+    margin-bottom: 2.5rem;
+}
+
+.duties-intro {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #D1D5DB; /* Slightly muted white/gray for readability */
+    max-width: 800px;
+    margin-bottom: 4rem;
+}
+
+/* The 3-column grid for the individual duties */
+.duties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem 2rem; /* 3rem vertical gap, 2rem horizontal gap */
+}
+
+/* The red lines above each specific duty */
+.duty-item-line {
+    width: 100%;
+    height: 3px;
+    background-color: #E5383B;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.duty-item h3 {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.duty-item p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #D1D5DB;
+}
+
+/* ============================================================
+   6. RESPONSIVE DESIGN (Mobile Adjustments)
+   ============================================================ */
 @media screen and (max-width: 900px) {
-    .hero-keywords h1 {
-        font-size: 3rem; /* Scale down text for tablet */
-    }
+    .hero-headline { font-size: 3rem; }
+    .hero-paragraph { font-size: 1.15rem; }
     
-    .hero-description p {
-        font-size: 1.15rem;
+    /* Drops the candidate and duties grids from 3 columns down to 2 */
+    .candidates-grid, .duties-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -189,23 +274,17 @@ h1, h2, h3, h4 {
         gap: 1rem;
         padding: 1.5rem;
     }
-    
     .header-nav ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1.5rem;
     }
+    .donate-btn-item { margin-left: 0; margin-top: 1rem; }
+    .hero-headline { font-size: 2.2rem; }
     
-    .donate-btn-item {
-        margin-left: 0;
-        margin-top: 1rem;
+    /* Drops grids down to 1 single column for phones */
+    .candidates-grid, .duties-grid {
+        grid-template-columns: 1fr;
     }
-    
-    .hero-keywords h1 {
-        font-size: 2.2rem; /* Scale down for mobile */
-    }
-    
-    .hero-content {
-        background-attachment: scroll; /* Parallax fixed background doesn't work well on mobile */
-    }
+    .duties-main-line { width: 80%; }
 }
