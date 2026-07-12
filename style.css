@@ -83,27 +83,26 @@ h1, h2, h3, h4 {
 /* ============================================================
    3. CAMPAIGN HERO SECTION (The Brick Streets Background)
    ============================================================ */
-/* Revise or add this block for your hero section */
-.hero-section-container {
-  position: relative;
-  width: 100%;
-  /* Make the section taller to encompass the full figures */
-  min-height: 850px; 
-  /* Increase padding for visual breathing room */
-  padding: 120px 60px;
-  background-color: #0d1e3d; /* Keep a dark fallback color */
-  
-  /* Apply the full image, and a darker, more complex gradient for text pop */
-  background-image: 
-    linear-gradient(rgba(13, 30, 61, 0.95), rgba(13, 30, 61, 0.7) 40%, rgba(13, 30, 61, 0.9)), 
-    url('brick_streets.jpg');
+.campaign-hero {
+    position: relative;
+    width: 100%;
+    min-height: 80vh; 
+    display: flex;
+    align-items: center; 
+    padding: 4rem 5%;
     
-  /* Key changes for positioning: anchor the figures to the right and top */
-  background-size: cover;
-  background-position: center top; 
-  background-repeat: no-repeat;
-  
-  color: #FFFFFF;
+    /* 1. Ensure this background-color exists */
+    background-color: #0A1128; 
+    
+    /* 2. ADD THIS BACK: The gradient blend + your photo */
+    background-image: 
+        linear-gradient(to right, rgba(10, 17, 40, 0.95) 0%, rgba(10, 17, 40, 0.6) 50%, rgba(10, 17, 40, 0.2) 100%),
+        url('brick_streets.jpg'); 
+        
+    /* 3. ADD THIS BACK: Ensures the photo is visible and focused correctly */
+    background-position: center 30%; 
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Ensure your left-aligned text block is limited in width so it doesn't cross over the figures */
