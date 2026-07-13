@@ -332,3 +332,22 @@ h1, h2, h3, h4 {
     }
     .duties-main-line { width: 80%; }
 }
+
+/* ============================================================
+   6. FOOTER SECTION
+   ============================================================ */
+.site-footer {
+    background-color: #0A1128; 
+    border-top: 4px solid #E5383B; /* The red line across the top */
+    text-align: center;
+    padding: 3rem 1rem; /* Gives it plenty of vertical breathing room */
+}
+
+.site-footer p {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.9rem;
+    color: #9CA3AF; /* A muted gray so it doesn't distract from main content */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
