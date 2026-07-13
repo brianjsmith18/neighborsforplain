@@ -203,12 +203,15 @@ h1, h2, h3, h4 {
 }
 
 /* NEW: Bio Text Styling */
+/* Styling for the biography paragraph inside the card */
 .bio-text {
+    font-family: 'Public Sans', sans-serif; /* Applies the new font */
     font-size: 1rem;
-    line-height: 1.5;
+    line-height: 1.6; /* Slightly increased for better readability with Public Sans */
     color: #4B5563; 
     margin: 1rem 0;
     padding: 0 1rem;
+    text-align: left; /* Forces the text to align left */
 }
 
 /* NEW: Read More Link Styling */
