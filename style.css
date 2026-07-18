@@ -192,8 +192,11 @@ h1, h2, h3, h4 {
 
 .candidate-info {
     padding: 1.5rem;
+    /* 1. Add flexbox to this container */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures the whole card stretches evenly */
     text-align: center;
-    flex-grow: 1; /* Helps cards grow evenly */
 }
 
 .candidate-info h3 {
@@ -216,17 +219,16 @@ h1, h2, h3, h4 {
 
 /* NEW: Read More Link Styling */
 .read-more {
-    display: inline-block;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif; 
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: #E5383B;
     border-bottom: 2px solid #E5383B;
-    margin-top: 1rem;
     transition: all 0.2s ease;
+    text-decoration: none;
 }
-
+   
 .read-more:hover {
     color: #0A1128;
     border-bottom-color: #0A1128;
