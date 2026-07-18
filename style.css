@@ -352,3 +352,49 @@ h1, h2, h3, h4 {
     }
     .duties-main-line { width: 80%; }
 }
+
+/* ============================================================
+   GOOGLE FORM MODAL (POP-UP)
+   ============================================================ */
+/* The dark background overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 2000; /* Sits on top of everything, including your header */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(10, 17, 40, 0.85); /* Your dark blue, slightly transparent */
+}
+
+/* The white box containing the form */
+.modal-content {
+    background-color: #F4F5F7;
+    margin: 5% auto; /* Centered with a small margin at the top */
+    padding: 1rem;
+    border: 3px solid #0A1128;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    box-shadow: 8px 8px 0px #E5383B; /* Red shadow for extra branding */
+}
+
+/* The 'X' Close Button */
+.close-btn {
+    color: #0A1128;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #E5383B; /* Turns red on hover */
+    text-decoration: none;
+}
