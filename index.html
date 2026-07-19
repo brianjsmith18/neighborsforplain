@@ -214,5 +214,16 @@
     }
 </script>   
 
+<!-- JavaScript for Mobile Menu -->
+<script>
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    // Toggle the 'active' class when the hamburger is clicked
+    hamburgerBtn.addEventListener("click", function() {
+        navLinks.classList.toggle("active");
+    });
+</script>
+
 </body>
 </html>
