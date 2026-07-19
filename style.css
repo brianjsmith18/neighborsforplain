@@ -515,3 +515,29 @@ h1, h2, h3, h4 {
         display: flex;
     }
 }
+
+/* ============================================================
+   PRESET DONATION SECTION
+   ============================================================ */
+.donate-preset-section {
+    background-color: #FFFFFF; /* White background so button shadows pop */
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 2px solid #E5383B; /* Matches the red separator lines */
+}
+
+.donate-preset-section h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #0A1128; /* Dark blue text */
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.preset-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* This ensures the buttons stack neatly on mobile phones */
+    gap: 1.5rem; /* Puts a nice, even space between all buttons */
+}
