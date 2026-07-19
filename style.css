@@ -440,6 +440,27 @@ h1, h2, h3, h4 {
     font-size: 1.1rem;
 }
 
+/* ============================================================
+   DONATE BUTTON (Overrides default nav link styles)
+   ============================================================ */
+.nav-links a.donate-btn {
+    background-color: #E5383B;
+    color: #FFFFFF; /* White text so it pops against the red */
+    padding: 0.5rem 1.5rem;
+    border: 3px solid #0A1128;
+    box-shadow: 4px 4px 0px #0A1128; /* Re-adds the dark shadow from your original design */
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+/* Optional hover effect */
+.nav-links a.donate-btn:hover,
+.nav-links a.donate-btn:focus {
+    background-color: #0A1128;
+    color: #FFFFFF;
+    box-shadow: 4px 4px 0px #E5383B; /* Swaps the shadow color when hovered */
+}
+
 /* Hide Hamburger Button on Desktop */
 .hamburger {
     display: none;
