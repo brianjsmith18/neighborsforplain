@@ -409,3 +409,79 @@ h1, h2, h3, h4 {
     color: #E5383B; /* Turns red on hover */
     text-decoration: none;
 }
+
+/* ============================================================
+   NAVIGATION & HEADER
+   ============================================================ */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative; /* Crucial for positioning the dropdown */
+    background-color: #FFFFFF; /* Ensure it has a solid background */
+}
+
+/* Default Desktop Menu Layout */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: #0A1128;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+/* Hide Hamburger Button on Desktop */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0A1128;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVENESS (Screens smaller than 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    /* Show the hamburger icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide the normal menu and prepare the dropdown layout */
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Pushes it right below the header */
+        left: 0;
+        width: 100%;
+        background-color: #FFFFFF;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.1); /* Adds a slight shadow so it pops over the hero image */
+        padding: 1rem 0;
+        text-align: center;
+        z-index: 1000;
+        border-top: 2px solid #E5383B; /* Adds a nice campaign red line to separate it */
+    }
+
+    /* Space out the links in the dropdown */
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    /* This class is added via JavaScript when the button is clicked */
+    .nav-links.active {
+        display: flex;
+    }
+}
