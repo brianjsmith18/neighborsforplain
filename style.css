@@ -133,18 +133,27 @@ h1, h2, h3, h4 {
 }
 
 .hero-btn {
+    background-color: #E5383B;
+    color: #FFFFFF; 
+    padding: 1rem 2rem; 
+    border: 3px solid #0A1128;
+    box-shadow: 4px 4px 0px #0A1128; 
     display: inline-block;
-    background-color: #FFFFFF;
-    color: #0A1128;
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-    border: 2px solid #FFFFFF;
     transition: all 0.2s ease;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.hero-btn:hover {
+/* Hover effect to match the Donate button */
+.hero-btn:hover,
+.hero-btn:focus {
     background-color: #0A1128;
     color: #FFFFFF;
+    box-shadow: 4px 4px 0px #E5383B; 
 }
 
 /* ============================================================
