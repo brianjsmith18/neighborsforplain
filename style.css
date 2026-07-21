@@ -545,3 +545,78 @@ h1, h2, h3, h4 {
     margin: 0 auto;
     max-width: 1200px; /* Keeps them from stretching too far apart on giant monitors */
 }
+
+/* ============================================================
+   IN THE NEWS PAGE
+   ============================================================ */
+.news-hero {
+    background-color: #0A1128;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 6rem 2rem;
+    border-bottom: 2px solid #E5383B;
+}
+
+.news-hero h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.news-hero p {
+    font-size: 1.25rem;
+}
+
+.news-container {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Spaces out the articles */
+}
+
+/* Reusing the shadow styling from your buttons for the cards */
+.news-card {
+    background-color: #FFFFFF;
+    border: 3px solid #0A1128;
+    box-shadow: 6px 6px 0px #0A1128;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.news-card:hover {
+    box-shadow: 6px 6px 0px #E5383B; /* Swaps the shadow color to red on hover */
+}
+
+.news-source {
+    font-family: 'Oswald', sans-serif;
+    color: #E5383B;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.news-card h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #0A1128;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.news-date {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.news-excerpt {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+}
