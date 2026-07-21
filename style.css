@@ -520,24 +520,28 @@ h1, h2, h3, h4 {
    PRESET DONATION SECTION
    ============================================================ */
 .donate-preset-section {
-    background-color: #FFFFFF; /* White background so button shadows pop */
-    text-align: center;
-    padding: 4rem 2rem;
-    border-top: 2px solid #E5383B; /* Matches the red separator lines */
+    background-color: #FFFFFF; 
+    text-align: center; /* Centers the H2 title */
+    padding: 4rem 2rem; /* Adds generous padding to the top and bottom of the white section */
+    border-top: 2px solid #E5383B; 
+    display: block; 
 }
 
 .donate-preset-section h2 {
     font-family: 'Oswald', sans-serif;
-    color: #0A1128; /* Dark blue text */
+    color: #0A1128; 
     font-size: 2.5rem;
-    margin-bottom: 2rem;
+    margin-top: 0;
+    margin-bottom: 3rem; /* Adds a nice gap between the title and the row of buttons */
     text-transform: uppercase;
 }
 
 .preset-buttons {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Forces the buttons to the middle of the page */
     align-items: center;
-    flex-wrap: wrap; /* This ensures the buttons stack neatly on mobile phones */
-    gap: 1.5rem; /* Puts a nice, even space between all buttons */
+    flex-wrap: wrap; 
+    gap: 2rem; /* Adds 2rem of empty space between every single button so the shadows don't overlap */
+    margin: 0 auto;
+    max-width: 1200px; /* Keeps them from stretching too far apart on giant monitors */
 }
