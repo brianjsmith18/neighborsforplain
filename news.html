@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In The News | Noftz, Osbun, & Smith</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="site-header">
+        <div class="logo">
+            <h1><a href="index.html" style="text-decoration:none; color:#0A1128;">NOFTZ, OSBUN, & SMITH FOR PLAIN TWP</a></h1>
+        </div>
+        
+        <button class="hamburger" id="hamburgerBtn">&#9776;</button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html#mission">THE MISSION</a></li>
+            <li><a href="index.html#team">MEET THE TEAM</a></li>
+            <li><a href="index.html#duties">BOARD DUTIES</a></li>
+            <li><a href="news.html">IN THE NEWS</a></li>
+            <li><a href="https://secure.actblue.com/donate/YOUR_LINK" class="donate-btn" target="_blank" rel="noopener">DONATE</a></li>
+        </ul>
+    </header>
+
+    <!-- NEWS HERO SECTION -->
+    <section class="news-hero">
+        <h2>In The News</h2>
+        <p>Read the latest updates and press coverage from the campaign trail.</p>
+    </section>
+
+    <!-- NEWS CARDS SECTION -->
+    <section class="news-container">
+        
+        <!-- Article 1: Ink Free News -->
+        <div class="news-card">
+            <div class="news-source">Ink Free News</div>
+            <h3>Three Candidates Announce Campaign For Plain Township Advisory Board</h3>
+            <p class="news-date">June 5, 2026</p>
+            <p class="news-excerpt">Three local residents have officially announced their candidacy for the Plain Township Advisory Board, bringing a shared focus on transparency, accountability and community-centered service.</p>
+            <a href="https://www.inkfreenews.com/2026/06/05/three-candidates-announce-campaign-for-plain-township-advisory-board/" target="_blank" rel="noopener" class="hero-btn">READ FULL ARTICLE</a>
+        </div>
+
+        <!-- Article 2: Times-Union -->
+        <div class="news-card">
+            <div class="news-source">Times-Union</div>
+            <h3>Three Candidates Announce Campaign For Plain Township Advisory Board</h3>
+            <p class="news-date">June 4, 2026</p>
+            <p class="news-excerpt">Becca Noftz, Brian Smith and Robert Osbun are running for three open seats on the board with a commitment to improving communication, strengthening awareness of township services and ensuring responsible stewardship of community resources.</p>
+            <a href="https://timesuniononline.com/stories/three-candidates-announce-campaign-for-plain-township-advisory-board,286891" target="_blank" rel="noopener" class="hero-btn">READ FULL ARTICLE</a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>PAID FOR BY THE NOFTZ, OSBUN, & SMITH FOR PLAIN TOWNSHIP BOARD PAC. AUTHORIZED BY REBECCA NOFTZ, ROBERT OSBUN, AND BRIAN SMITH</p>
+    </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const navLinks = document.getElementById("navLinks");
+        hamburgerBtn.addEventListener("click", function() {
+            navLinks.classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>
